@@ -7,7 +7,7 @@ class App extends Component {
 
     handleDelete(listId){
         console.log(listId);
-        fetch(`http://localhost:3010/api/deleteList?listId=${listId}`, {
+        fetch(`/api/deleteList?listId=${listId}`, {
             method: 'delete'
         }).then(result=>result.json())
             .then(result=> {
@@ -17,7 +17,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3010/api/getAllLists`)
+        fetch(`/api/getAllLists`)
             .then(result=>result.json())
             .then(result=> {
                 // console.log(result.lists);
